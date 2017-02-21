@@ -30,7 +30,7 @@ namespace ComputerVision
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            surfaceBtn.IsEnabled = false;
+            DisableAllButtons();
             try
             {
                 Cursor = Cursors.AppStarting;
@@ -45,13 +45,13 @@ namespace ComputerVision
             }
             finally
             {
-                surfaceBtn.IsEnabled = true;
+                EnableAllButtons();
             }
         }
 
         private async void LakeButton_Click(object sender, RoutedEventArgs e)
         {
-            lakeBtn.IsEnabled = false;
+            DisableAllButtons();
             try
             {
                 Cursor = Cursors.AppStarting;
@@ -66,13 +66,13 @@ namespace ComputerVision
             }
             finally
             {
-                lakeBtn.IsEnabled = true;
+                EnableAllButtons();
             }
         }
 
         private async void GardenButton_Click(object sender, RoutedEventArgs e)
         {
-            gardenBtn.IsEnabled = false;
+            DisableAllButtons();
             try
             {
                 Cursor = Cursors.AppStarting;
@@ -87,8 +87,22 @@ namespace ComputerVision
             }
             finally
             {
-                gardenBtn.IsEnabled = true;
+                EnableAllButtons();
             }
+        }
+
+        void DisableAllButtons()
+        {
+            gardenBtn.IsEnabled = false;
+            lakeBtn.IsEnabled = false;
+            surfaceBtn.IsEnabled = false;
+        }
+
+        void EnableAllButtons()
+        {
+            gardenBtn.IsEnabled = true;
+            lakeBtn.IsEnabled = true;
+            surfaceBtn.IsEnabled = true;
         }
     }
 }
