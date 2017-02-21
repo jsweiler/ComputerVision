@@ -76,7 +76,7 @@ namespace ComputerVision
             try
             {
                 Cursor = Cursors.AppStarting;
-                var client = new VisionServiceClient("ceb9acc98bb647f5b59d32f18b56eed2");
+                var client = new VisionServiceClient("");
                 using (var file = new FileStream("Pictures\\garden.jpg", FileMode.Open))
                 {
                     var result = await client.GetTagsAsync(file);
